@@ -1,0 +1,47 @@
+{% extends 'front/base.html.twig' %}
+
+{% block body %}
+
+
+    <h1 class="mt-5">
+        Profil de {{ user.name }}
+        <button class="btn btn-warning collapse multi-collapse show float-end"
+                data-bs-toggle="collapse"
+                data-bs-target=".multi-collapse"
+                aria-expanded="false"
+                aria-controls="button-edit form-profile"
+                id="button-edit"
+        >
+            <i class="fa fa-pen"></i>
+        </button>
+    </h1>
+            {{ form_start(form) }}
+            <div class="mt-4">
+                {{ form_row(form.name) }}
+            </div>
+            <div class="my-4">
+                {{ form_row(form.password) }}
+            </div>
+            <div>
+            </div>
+            <div class="mt-4">
+                <button class="btn btn-success" type="submit">
+                    <i class="fa fa-check"></i>
+                    {{ 'common.button.confirm'|trans }}
+                </button>
+                <button class="btn btn-danger"
+                        data-bs-toggle="collapse"
+                        data-bs-target=".multi-collapse"
+                        aria-expanded="false"
+                        aria-controls="form-profile"
+                        id="button-cancel"
+                        type="button"
+                >
+                    <i class="fa fa-xmark"></i>
+                </button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}
